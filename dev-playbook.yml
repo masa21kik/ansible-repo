@@ -1,0 +1,7 @@
+- hosts: dev
+  sudo: yes
+  tasks:
+    - name: be sure emacs is installed
+      apt: name=emacs state=installed
+    - name: be sure build-essential is installed
+      apt: name=build-essential state=installed

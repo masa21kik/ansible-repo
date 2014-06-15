@@ -1,0 +1,7 @@
+- hosts: base
+  sudo: yes
+  tasks:
+    - name: be sure lv is installed
+      apt: name=lv state=installed
+    - name: be sure tmux is installed
+      apt: name=tmux state=installed

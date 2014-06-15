@@ -1,0 +1,7 @@
+- hosts: monitoring
+  sudo: yes
+  tasks:
+    - name: be sure dstat is installed
+      apt: name=dstat state=installed
+    - name: be sure sysstat is installed
+      apt: name=sysstat state=installed
