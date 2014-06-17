@@ -1,5 +1,7 @@
 - hosts: base
   sudo: yes
+  vars:
+    magic_number: 1234
   tasks:
     - name: be sure lv is installed
       apt: name=lv state=installed
@@ -7,3 +9,7 @@
       apt: name=tmux state=installed
     - name: be sure tmux.conf is exists
       copy: src=roles/base/files/tmux.conf dest=/root/.tmux.conf owner=root group=root mode=644
+    - name: be sure zsh is installed
+      apt: name=zsh state=installed
+    - name: be sure .zsh_local is exists
+      template: src=roles/base/templates/zsh_local dest=/root/.zsh_local owner=root group=root mode=644
